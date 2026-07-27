@@ -1,0 +1,12 @@
+sequence,condition,mode,ate_rmse,ate_mean,ate_median,ate_std,pct_vs_clean
+traj2,occ_lv1,stereo,0.006417,0.005655,0.004868,0.003035,
+traj2,occ_lv2,stereo,0.006197,0.005417,0.004537,0.003010,
+traj2,occ_lv3,stereo,0.005925,0.005220,0.004564,0.002803,
+traj2,occ_lv4,stereo,0.006376,0.005531,0.004772,0.003172,
+traj2,occ_lv5,stereo,0.007078,0.006290,0.005503,0.003245,
+traj2,occ_lv5b,stereo,0.006656,0.005767,0.004955,0.003323,
+traj2,occ_lv5c,stereo,0.007324,0.006240,0.005311,0.003836,
+traj2,occ_lv5d,stereo,FAIL,,,,
+traj2,occ_lv5e,stereo,FAIL,,,,
+traj2,occ_lv6,stereo,FAIL,,,,
+traj2,occ_lv7,stereo,FAIL,,,,

@@ -1,0 +1,8 @@
+condition: blur_lv4
+condition_params:
+  kernel_size: 19
+  sigma: 3.0
+  type: gaussian_blur
+experiment: blur_sweep_B
+mode: stereo
+traj: traj1

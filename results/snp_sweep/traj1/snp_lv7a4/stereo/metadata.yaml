@@ -1,0 +1,7 @@
+condition: snp_lv7a4
+condition_params:
+  density: 0.34
+  type: salt_and_pepper
+experiment: snp_sweep
+mode: stereo
+traj: traj1

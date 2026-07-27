@@ -1,0 +1,5 @@
+condition: clean
+condition_params: null
+experiment: clean
+mode: mono
+traj: traj2

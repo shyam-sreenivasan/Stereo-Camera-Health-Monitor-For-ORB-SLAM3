@@ -1,0 +1,10 @@
+sequence,condition,mode,ate_rmse,ate_mean,ate_median,ate_std,pct_vs_clean
+traj2,bright_lv1,stereo,0.006733,0.005605,0.004792,0.003730,
+traj2,bright_lv2,stereo,0.005900,0.005291,0.004690,0.002611,
+traj2,bright_lv3,stereo,0.006025,0.005331,0.004659,0.002807,
+traj2,bright_lv4,stereo,0.006306,0.005507,0.004874,0.003072,
+traj2,bright_lv5,stereo,FAIL,,,,
+traj2,bright_lv5b,stereo,FAIL,,,,
+traj2,bright_lv5c,stereo,FAIL,,,,
+traj2,bright_lv5d,stereo,FAIL,,,,
+traj2,bright_lv6,stereo,FAIL,,,,

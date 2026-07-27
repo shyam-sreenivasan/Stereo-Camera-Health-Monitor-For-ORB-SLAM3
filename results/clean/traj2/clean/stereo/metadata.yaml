@@ -1,0 +1,5 @@
+condition: clean
+condition_params: null
+experiment: clean
+mode: stereo
+traj: traj2

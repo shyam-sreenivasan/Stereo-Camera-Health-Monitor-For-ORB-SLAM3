@@ -1,0 +1,13 @@
+sequence,condition,mode,ate_rmse,ate_mean,ate_median,ate_std,pct_vs_clean
+traj2,mblur_lv1,stereo,0.005923,0.005272,0.004669,0.002701,
+traj2,mblur_lv2,stereo,0.006915,0.005908,0.005079,0.003593,
+traj2,mblur_lv3,stereo,0.006618,0.005828,0.005250,0.003136,
+traj2,mblur_lv3b,stereo,0.007140,0.006118,0.005250,0.003680,
+traj2,mblur_lv3b1,stereo,0.008524,0.006647,0.005298,0.005336,
+traj2,mblur_lv3b2,stereo,FAIL,,,,
+traj2,mblur_lv3c,stereo,FAIL,,,,
+traj2,mblur_lv3d,stereo,FAIL,,,,
+traj2,mblur_lv4,stereo,FAIL,,,,
+traj2,mblur_lv5,stereo,FAIL,,,,
+traj2,mblur_lv6,stereo,FAIL,,,,
+traj2,mblur_lv7,stereo,FAIL,,,,

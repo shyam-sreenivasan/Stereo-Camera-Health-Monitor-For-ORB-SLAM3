@@ -1,0 +1,7 @@
+condition: occ_lv3
+condition_params:
+  frac: 0.2
+  type: occlusion
+experiment: occlusion_sweep
+mode: stereo
+traj: traj2

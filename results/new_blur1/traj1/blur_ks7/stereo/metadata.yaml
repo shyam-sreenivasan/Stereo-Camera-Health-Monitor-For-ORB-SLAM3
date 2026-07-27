@@ -1,0 +1,8 @@
+condition: blur_ks7
+condition_params:
+  kernel_size: 7
+  sigma: 50
+  type: gaussian_blur
+experiment: new_blur1
+mode: stereo
+traj: traj1

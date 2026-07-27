@@ -1,3 +1,8 @@
+ORB_SLAM3/
+data/noisy_datasets/*
+data/TUM_original/*
+results/*
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]

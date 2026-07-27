@@ -1,0 +1,6 @@
+# Exclude large/redundant per-run files — keep stats and trajectories
+**/f_*.txt
+**/kf_*.txt
+**/log.txt
+**/evo_output.txt
+**/ape_result.zip

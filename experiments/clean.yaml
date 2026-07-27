@@ -1,0 +1,18 @@
+# Usage: python run_pipeline.py --config experiments/clean.yaml
+# Runs clean stereo + mono — provides baseline trajectories for health monitor dataset builder.
+
+name: clean
+
+seed: 42
+timeout: 1800
+
+sequences:
+  traj1: data/TUM_original/dataset-room1_512_16
+  traj2: data/TUM_original/dataset-room2_512_16
+
+conditions:
+  clean:
+
+slam_modes:
+  - stereo
+  - mono

@@ -1,0 +1,30 @@
+conditions:
+- clean
+experiment: clean
+runs:
+- condition: clean
+  elapsed_s: 184.0
+  max: 0.018150664068673435
+  mean: 0.005112470919318144
+  median: 0.004629947387653833
+  min: 0.0003271686815319147
+  mode: stereo
+  rmse: 0.005706406960774563
+  sse: 0.0823194672561963
+  std: 0.0025349006886074784
+  traj: traj2
+- condition: clean
+  elapsed_s: 166.1
+  max: 0.05967416104342812
+  mean: 0.007032754599204751
+  median: 0.006345252016347149
+  min: 0.0005383163183483396
+  mode: mono
+  rmse: 0.008224438964850872
+  sse: 0.16876528373496041
+  std: 0.004264007391400925
+  traj: traj2
+seed: 42
+slam_modes:
+- stereo
+- mono

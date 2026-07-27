@@ -1,0 +1,28 @@
+# Usage: python run_pipeline.py --config experiments/new_blur1.yaml
+
+name: new_blur1
+
+seed: 42
+timeout: 600
+
+sequences:
+  traj1: data/TUM_original/dataset-room1_512_16
+
+conditions:
+  blur_ks3:
+    type:        gaussian_blur
+    kernel_size: 3
+    sigma:       50
+
+  blur_ks7:
+    type:        gaussian_blur
+    kernel_size: 7
+    sigma:       50
+
+  blur_ks21:
+    type:        gaussian_blur
+    kernel_size: 21
+    sigma:       50
+
+slam_modes:
+  - stereo

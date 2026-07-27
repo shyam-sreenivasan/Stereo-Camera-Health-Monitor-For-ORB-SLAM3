@@ -1,0 +1,61 @@
+# Occlusion sweep
+# Parameter: frac = fraction of image area blacked out by a random rectangle
+#
+# Usage: python run_pipeline.py --config experiments/occlusion_sweep.yaml
+
+name: occlusion_sweep
+
+seed: 42
+timeout: 600
+
+sequences:
+  traj1: data/TUM_original/dataset-room1_512_16
+  traj2: data/TUM_original/dataset-room2_512_16
+
+conditions:
+  occ_lv1:
+    type: occlusion
+    frac: 0.05
+
+  occ_lv2:
+    type: occlusion
+    frac: 0.10
+
+  occ_lv3:
+    type: occlusion
+    frac: 0.20
+
+  occ_lv4:
+    type: occlusion
+    frac: 0.35
+
+  occ_lv5:
+    type: occlusion
+    frac: 0.50
+
+  occ_lv5b:
+    type: occlusion
+    frac: 0.55
+
+  occ_lv5c:
+    type: occlusion
+    frac: 0.58
+
+  occ_lv5d:
+    type: occlusion
+    frac: 0.61
+
+  occ_lv5e:
+    type: occlusion
+    frac: 0.63
+
+  occ_lv6:
+    type: occlusion
+    frac: 0.65
+
+  occ_lv7:
+    type: occlusion
+    frac: 0.80
+
+slam_modes:
+  - stereo

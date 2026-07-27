@@ -1,0 +1,8 @@
+condition: blur_lv5d
+condition_params:
+  kernel_size: 39
+  sigma: 6.5
+  type: gaussian_blur
+experiment: blur_sweep_B
+mode: stereo
+traj: traj1

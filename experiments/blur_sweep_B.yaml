@@ -1,0 +1,113 @@
+# Gaussian blur sweep — Option B
+# kernel_size and sigma scale together: kernel_size = ceil(6*sigma) made odd
+# This ensures blur is always fully expressed (no wasted kernel, no truncation)
+#
+# Usage: python run_pipeline.py --config experiments/blur_sweep_B.yaml
+
+name: blur_sweep_B
+
+seed: 42
+timeout: 600
+
+sequences:
+  traj1: data/TUM_original/dataset-room1_512_16
+  traj2: data/TUM_original/dataset-room2_512_16
+
+conditions:
+  blur_lv1:
+    type:        gaussian_blur
+    kernel_size: 3
+    sigma:       0.5
+
+  blur_lv2:
+    type:        gaussian_blur
+    kernel_size: 7
+    sigma:       1.0
+
+  blur_lv3:
+    type:        gaussian_blur
+    kernel_size: 13
+    sigma:       2.0
+
+  blur_lv4:
+    type:        gaussian_blur
+    kernel_size: 19
+    sigma:       3.0
+
+  blur_lv5:
+    type:        gaussian_blur
+    kernel_size: 31
+    sigma:       5.0
+
+  blur_lv5b:
+    type:        gaussian_blur
+    kernel_size: 33
+    sigma:       5.5
+
+  blur_lv5b1:
+    type:        gaussian_blur
+    kernel_size: 37
+    sigma:       5.6
+
+  blur_lv5b2:
+    type:        gaussian_blur
+    kernel_size: 37
+    sigma:       5.7
+
+  blur_lv5b3:
+    type:        gaussian_blur
+    kernel_size: 37
+    sigma:       5.8
+
+  blur_lv5b4:
+    type:        gaussian_blur
+    kernel_size: 37
+    sigma:       5.9
+
+  blur_lv5c:
+    type:        gaussian_blur
+    kernel_size: 37
+    sigma:       6.0
+
+  blur_lv5c1:
+    type:        gaussian_blur
+    kernel_size: 37
+    sigma:       6.1
+
+  blur_lv5c2:
+    type:        gaussian_blur
+    kernel_size: 37
+    sigma:       6.2
+
+  blur_lv5c3:
+    type:        gaussian_blur
+    kernel_size: 39
+    sigma:       6.3
+
+  blur_lv5d:
+    type:        gaussian_blur
+    kernel_size: 39
+    sigma:       6.5
+
+  blur_lv5e:
+    type:        gaussian_blur
+    kernel_size: 43
+    sigma:       7.0
+
+  blur_lv5f:
+    type:        gaussian_blur
+    kernel_size: 45
+    sigma:       7.5
+
+  blur_lv6:
+    type:        gaussian_blur
+    kernel_size: 49
+    sigma:       8.0
+
+  blur_lv7:
+    type:        gaussian_blur
+    kernel_size: 73
+    sigma:       12.0
+
+slam_modes:
+  - stereo

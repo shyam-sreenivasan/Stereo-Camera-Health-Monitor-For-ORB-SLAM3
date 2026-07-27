@@ -1,0 +1,114 @@
+conditions:
+- occ_lv1
+- occ_lv2
+- occ_lv3
+- occ_lv4
+- occ_lv5
+- occ_lv5b
+- occ_lv5c
+- occ_lv5d
+- occ_lv5e
+- occ_lv6
+- occ_lv7
+experiment: occlusion_sweep
+runs:
+- condition: occ_lv1
+  elapsed_s: 168.8
+  max: 0.017575499988081278
+  mean: 0.005654677737588191
+  median: 0.004868420704322984
+  min: 0.00037150751327816886
+  mode: stereo
+  rmse: 0.006417476764751614
+  sse: 0.10361896419373513
+  std: 0.003034572080236575
+  traj: traj2
+- condition: occ_lv2
+  elapsed_s: 172.5
+  max: 0.0198912531187142
+  mean: 0.005417029887743633
+  median: 0.004537205907070603
+  min: 0.0004181337534929206
+  mode: stereo
+  rmse: 0.006196883960023629
+  sse: 0.09657944759720533
+  std: 0.003009511257545042
+  traj: traj2
+- condition: occ_lv3
+  elapsed_s: 172.1
+  max: 0.022162064400875862
+  mean: 0.005220426773617451
+  median: 0.004563837709617142
+  min: 0.00022130630126444048
+  mode: stereo
+  rmse: 0.005925494302411098
+  sse: 0.08841071350886828
+  std: 0.002803324281849048
+  traj: traj2
+- condition: occ_lv4
+  elapsed_s: 171.4
+  max: 0.024507712904528092
+  mean: 0.005530505638826413
+  median: 0.004771694311586284
+  min: 0.00037172501708235907
+  mode: stereo
+  rmse: 0.00637555111166258
+  sse: 0.10222884472321625
+  std: 0.0031719330630281635
+  traj: traj2
+- condition: occ_lv5
+  elapsed_s: 170.9
+  max: 0.026980719998840223
+  mean: 0.006290153092958935
+  median: 0.00550327573769333
+  min: 0.0006870566185199543
+  mode: stereo
+  rmse: 0.007077943415285579
+  sse: 0.12925099011416
+  std: 0.003245189833757595
+  traj: traj2
+- condition: occ_lv5b
+  elapsed_s: 170.0
+  max: 0.0328504616556854
+  mean: 0.005767153270265521
+  median: 0.00495455617479387
+  min: 0.0003472025399794051
+  mode: stereo
+  rmse: 0.006655797204765577
+  sse: 0.11345136889970203
+  std: 0.003322586280028101
+  traj: traj2
+- condition: occ_lv5c
+  elapsed_s: 169.5
+  max: 0.04842997158274055
+  mean: 0.006239536281846557
+  median: 0.00531116013918058
+  min: 0.0005632278862992729
+  mode: stereo
+  rmse: 0.00732422919302338
+  sse: 0.13631025084398915
+  std: 0.003835690323717017
+  traj: traj2
+- condition: occ_lv5d
+  elapsed_s: 173.5
+  mode: stereo
+  status: FAILED
+  traj: traj2
+- condition: occ_lv5e
+  elapsed_s: 0
+  mode: stereo
+  status: FAILED
+  traj: traj2
+- condition: occ_lv6
+  elapsed_s: 0
+  mode: stereo
+  status: FAILED
+  traj: traj2
+- condition: occ_lv7
+  elapsed_s: 0
+  mode: stereo
+  status: FAILED
+  traj: traj2
+seed: 42
+slam_modes:
+- stereo

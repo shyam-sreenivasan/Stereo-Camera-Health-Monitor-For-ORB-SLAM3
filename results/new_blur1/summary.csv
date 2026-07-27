@@ -1,0 +1,4 @@
+sequence,condition,mode,ate_rmse,ate_mean,ate_median,ate_std,pct_vs_clean
+traj1,blur_ks21,stereo,FAIL,,,,
+traj1,blur_ks3,stereo,0.007139,0.006365,0.005909,0.003235,
+traj1,blur_ks7,stereo,0.007752,0.006770,0.006050,0.003777,

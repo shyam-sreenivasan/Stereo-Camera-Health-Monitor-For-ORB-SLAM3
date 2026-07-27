@@ -1,0 +1,78 @@
+# Motion blur sweep
+# Parameter: length = kernel length in pixels (horizontal, angle=0)
+# Longer kernel = more motion blur along the horizontal axis
+#
+# Usage: python run_pipeline.py --config experiments/motion_blur_sweep.yaml
+
+name: motion_blur_sweep
+
+seed: 42
+timeout: 600
+
+sequences:
+  traj1: data/TUM_original/dataset-room1_512_16
+  traj2: data/TUM_original/dataset-room2_512_16
+
+conditions:
+  mblur_lv1:
+    type:   motion_blur
+    length: 5
+    angle:  0
+
+  mblur_lv2:
+    type:   motion_blur
+    length: 10
+    angle:  0
+
+  mblur_lv3:
+    type:   motion_blur
+    length: 20
+    angle:  0
+
+  mblur_lv3b:
+    type:   motion_blur
+    length: 25
+    angle:  0
+
+  mblur_lv3b1:
+    type:   motion_blur
+    length: 26
+    angle:  0
+
+  mblur_lv3b2:
+    type:   motion_blur
+    length: 27
+    angle:  0
+
+  mblur_lv3c:
+    type:   motion_blur
+    length: 28
+    angle:  0
+
+  mblur_lv3d:
+    type:   motion_blur
+    length: 31
+    angle:  0
+
+  mblur_lv4:
+    type:   motion_blur
+    length: 35
+    angle:  0
+
+  mblur_lv5:
+    type:   motion_blur
+    length: 50
+    angle:  0
+
+  mblur_lv6:
+    type:   motion_blur
+    length: 75
+    angle:  0
+
+  mblur_lv7:
+    type:   motion_blur
+    length: 100
+    angle:  0
+
+slam_modes:
+  - stereo

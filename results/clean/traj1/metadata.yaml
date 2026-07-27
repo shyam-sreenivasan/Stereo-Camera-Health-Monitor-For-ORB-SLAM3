@@ -1,0 +1,3 @@
+experiment: clean
+sequence_path: /home/shyam/Documents/RSN/project/eece5554_final_project/data/TUM_original/dataset-room1_512_16
+traj: traj1

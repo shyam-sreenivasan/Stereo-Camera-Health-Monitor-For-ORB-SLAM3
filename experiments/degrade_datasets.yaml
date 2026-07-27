@@ -1,0 +1,64 @@
+############################ CLEAN #################################
+
+#   clean:                  # no parameters needed
+
+############################  GAUSSIAN BLUR #################################
+#
+#   type:        gaussian_blur
+#   kernel_size: <odd integer>   # size of the blur kernel
+#                                # larger = more blur
+#   sigma:      <integer>	 # blur spread
+
+#
+############################ GAUSSIAN NOISE #########################
+#
+#   type:  gaussian_noise
+#   sigma: <float>   # std dev
+
+#
+############################ OCCLUSION ###############################
+#
+#   type: occlusion
+#   frac: <float>   # fraction of image area to black out, between 0.0 and 1.0
+
+######################################################
+
+#   Example:
+#     gaussian_20:
+#       type:  gaussian_noise
+#       sigma: 20
+
+###########################################################
+
+
+name: degrade
+seed: 42
+timeout: 600
+
+sequences:
+  room1: data/TUM_original/dataset-room1_512_16
+
+conditions:
+  clean:
+
+  blur_ks3:
+    type:        gaussian_blur
+    kernel_size: 3
+    sigma:       0        
+
+
+# Run both stereo & mono on the degraded datasets or comment mono to just run stereo
+slam_modes:
+  - stereo
+#  - mono
+  
+  
+  
+  
+  
+  
+   
+  
+  
+  
+

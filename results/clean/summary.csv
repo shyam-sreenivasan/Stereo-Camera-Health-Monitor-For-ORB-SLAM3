@@ -1,0 +1,5 @@
+sequence,condition,mode,ate_rmse,ate_mean,ate_median,ate_std,pct_vs_clean
+traj1,clean,mono,0.010231,0.007108,0.005927,0.007359,
+traj1,clean,stereo,0.006814,0.005937,0.005426,0.003344,
+traj2,clean,mono,0.008224,0.007033,0.006345,0.004264,
+traj2,clean,stereo,0.005706,0.005112,0.004630,0.002535,

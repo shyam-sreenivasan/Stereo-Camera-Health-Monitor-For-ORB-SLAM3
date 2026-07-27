@@ -1,0 +1,7 @@
+condition: bright_lv5c
+condition_params:
+  alpha: 0.05
+  type: brightness
+experiment: brightness_sweep
+mode: stereo
+traj: traj1

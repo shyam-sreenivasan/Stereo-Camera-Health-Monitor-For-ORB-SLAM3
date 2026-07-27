@@ -1,0 +1,55 @@
+# Brightness/exposure sweep
+# Parameter: alpha = pixel scale factor (clip to [0,255])
+#   alpha < 1.0 → underexposure
+#   alpha > 1.0 → overexposure
+#
+# Usage: python run_pipeline.py --config experiments/brightness_sweep.yaml
+
+name: brightness_sweep
+
+seed: 42
+timeout: 600
+
+sequences:
+  traj1: data/TUM_original/dataset-room1_512_16
+  traj2: data/TUM_original/dataset-room2_512_16
+
+conditions:
+  bright_lv1:
+    type:  brightness
+    alpha: 0.1
+
+  bright_lv2:
+    type:  brightness
+    alpha: 0.5
+
+  bright_lv3:
+    type:  brightness
+    alpha: 2.0
+
+  bright_lv4:
+    type:  brightness
+    alpha: 5.0
+
+  bright_lv5:
+    type:  brightness
+    alpha: 0.02
+
+  bright_lv5b:
+    type:  brightness
+    alpha: 0.03
+
+  bright_lv5c:
+    type:  brightness
+    alpha: 0.05
+
+  bright_lv5d:
+    type:  brightness
+    alpha: 0.07
+
+  bright_lv6:
+    type:  brightness
+    alpha: 10.0
+
+slam_modes:
+  - stereo

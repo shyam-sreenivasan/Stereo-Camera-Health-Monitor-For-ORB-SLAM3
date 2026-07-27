@@ -1,0 +1,8 @@
+condition: mblur_lv2
+condition_params:
+  angle: 0
+  length: 10
+  type: motion_blur
+experiment: motion_blur_sweep
+mode: stereo
+traj: traj2

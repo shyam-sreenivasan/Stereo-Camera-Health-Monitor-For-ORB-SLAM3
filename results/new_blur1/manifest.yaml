@@ -1,0 +1,36 @@
+conditions:
+- blur_ks3
+- blur_ks7
+- blur_ks21
+experiment: new_blur1
+runs:
+- condition: blur_ks3
+  elapsed_s: 172.4
+  max: 0.03135848003152979
+  mean: 0.006364723212959105
+  median: 0.005909279875558646
+  min: 0.00023105457050980483
+  mode: stereo
+  rmse: 0.007139469234049772
+  sse: 0.13752251250675884
+  std: 0.003234550875525494
+  traj: traj1
+- condition: blur_ks7
+  elapsed_s: 174.6
+  max: 0.032098598720831914
+  mean: 0.006770134283561404
+  median: 0.006049797779049331
+  min: 0.0003942708724317035
+  mode: stereo
+  rmse: 0.007752453827751212
+  sse: 0.16112954868214205
+  std: 0.003777012329071874
+  traj: traj1
+- condition: blur_ks21
+  elapsed_s: 190.9
+  mode: stereo
+  status: FAILED
+  traj: traj1
+seed: 42
+slam_modes:
+- stereo

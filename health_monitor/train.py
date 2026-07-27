@@ -8,17 +8,17 @@ Architecture:
     frame_emb = concat(left_emb, right_emb, diff_emb) → Linear(1536→128)
 
   Sequence:
-    10 frame embeddings (10, 128) → GRU(128, 64) → last hidden (64,)
+    20 frame embeddings (20, 128) → GRU(128, 64) → last hidden (64,)
 
   Classifier:
     Linear(64→32) + ReLU + Dropout → Linear(32→1) + Sigmoid → severity
 """
 
-import pickle
+import argparse
 import numpy as np
 import torch
 import torch.nn as nn
-from torch.utils.data import DataLoader, random_split
+from torch.utils.data import DataLoader, random_split, WeightedRandomSampler
 from torchvision.models import resnet18, ResNet18_Weights
 from pathlib import Path
 import matplotlib
@@ -26,10 +26,9 @@ matplotlib.use("Agg")   # non-GUI backend — saves to file instead of displayin
 import matplotlib.pyplot as plt
 
 from stereo_health_dataset import StereoHealthDataset
+from config import DATASET_ROOT, CHECKPOINT_DIR, SEED
 
 # ── Config ────────────────────────────────────────────────────────────────────
-DATASET_PATH   = Path("datasets/health_monitor_dataset.pkl")
-CHECKPOINT_DIR = Path("checkpoints")
 CHECKPOINT_DIR.mkdir(exist_ok=True)
 
 BATCH_SIZE    = 16
@@ -38,10 +37,8 @@ LR_BACKBONE   = 1e-5
 LR_REST       = 1e-3
 VAL_SPLIT     = 0.2
 CROSSOVER_THR = 0.5
-SEED          = 42
 DEVICE        = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-QUICK_TEST    = True  # set True to verify pipeline quickly
 QUICK_SAMPLES = 100
 
 # ── Model ─────────────────────────────────────────────────────────────────────
@@ -60,6 +57,9 @@ class FrameEncoder(nn.Module):
         if freeze_backbone:
             for param in self.backbone.parameters():
                 param.requires_grad = False
+            # unfreeze the last ResNet layer (layer4) for fine-tuning
+            for param in list(self.backbone.children())[-1].parameters():
+                param.requires_grad = True
 
         self.project = nn.Sequential(
             nn.Linear(1536, embed_dim),
@@ -230,19 +230,22 @@ def plot_predictions(preds, targets):
 
 # ── Main ──────────────────────────────────────────────────────────────────────
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--quick", action="store_true", help="Subsample to 100 windows for a quick pipeline test")
+    args = parser.parse_args()
+
     print(f"Device: {DEVICE}")
 
     # data
-    with open(DATASET_PATH, "rb") as f:
-        windows = pickle.load(f)
+    dataset = StereoHealthDataset(dataset_root=DATASET_ROOT)
+    print(f"Dataset: {len(dataset)} windows")
 
     # subsample for quick test
-    if QUICK_TEST:
+    if args.quick:
         rng = np.random.default_rng(SEED)
-        idx = rng.choice(len(windows), size=QUICK_SAMPLES, replace=False)
-        windows = [windows[i] for i in idx]
-        print(f"QUICK TEST MODE — using {len(windows)} windows")
-    dataset = StereoHealthDataset(windows)
+        idx = rng.choice(len(dataset), size=min(QUICK_SAMPLES, len(dataset)), replace=False)
+        dataset = torch.utils.data.Subset(dataset, idx.tolist())
+        print(f"QUICK TEST MODE — using {len(dataset)} windows")
 
     n_val   = int(len(dataset) * VAL_SPLIT)
     n_train = len(dataset) - n_val
@@ -251,12 +254,24 @@ def main():
         generator=torch.Generator().manual_seed(SEED)
     )
 
-    n_workers    = 0 if QUICK_TEST else 4
+    n_workers = 0 if args.quick else 4
+
+    # weighted sampler — balance healthy vs degraded to fix mid-range bias
+    train_severities = np.array([dataset.windows[i][1]
+                                  for i in train_set.indices])
+    bins    = [0.0, 0.25, 0.5, 0.75, 1.01]
+    bin_idx = np.digitize(train_severities, bins) - 1
+    bin_counts = np.bincount(bin_idx, minlength=len(bins) - 1).astype(float)
+    bin_weights = 1.0 / np.maximum(bin_counts, 1)
+    sample_weights = torch.tensor(bin_weights[bin_idx], dtype=torch.float)
+    sampler = WeightedRandomSampler(sample_weights, num_samples=len(train_set), replacement=True)
+
     train_loader = DataLoader(train_set, batch_size=BATCH_SIZE,
-                              shuffle=True,  num_workers=n_workers, pin_memory=True)
+                              sampler=sampler, num_workers=n_workers, pin_memory=True)
     val_loader   = DataLoader(val_set,   batch_size=BATCH_SIZE,
                               shuffle=False, num_workers=n_workers, pin_memory=True)
     print(f"Train: {len(train_set)}  |  Val: {len(val_set)}")
+    print(f"Bin counts (healthy/mild/degraded/severe): {bin_counts.astype(int)}")
 
     # model
     model = StereoHealthMonitor(

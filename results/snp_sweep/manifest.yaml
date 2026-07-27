@@ -1,0 +1,180 @@
+conditions:
+- snp_lv1
+- snp_lv2
+- snp_lv3
+- snp_lv4
+- snp_lv5
+- snp_lv6
+- snp_lv7
+- snp_lv7a1
+- snp_lv7a2
+- snp_lv7a3
+- snp_lv7a4
+- snp_lv7b
+- snp_lv7c
+- snp_lv7d
+- snp_lv7e
+- snp_lv7f
+- snp_lv8
+experiment: snp_sweep
+runs:
+- condition: snp_lv1
+  elapsed_s: 173.4
+  max: 0.02416235260119674
+  mean: 0.005628688136958358
+  median: 0.005057856207722104
+  min: 0.00036122782499827514
+  mode: stereo
+  rmse: 0.006374193476292242
+  sse: 0.10230720234753415
+  std: 0.002991356269331828
+  traj: traj2
+- condition: snp_lv2
+  elapsed_s: 173.0
+  max: 0.058671911410266266
+  mean: 0.0058570403933355195
+  median: 0.005102868865468843
+  min: 0.00040612350448568303
+  mode: stereo
+  rmse: 0.0069337327748640485
+  sse: 0.12418198744909734
+  std: 0.0037110278931934753
+  traj: traj2
+- condition: snp_lv3
+  elapsed_s: 174.3
+  max: 0.027532533281019154
+  mean: 0.0059072176190281146
+  median: 0.005172208357605644
+  min: 0.0005806985061030664
+  mode: stereo
+  rmse: 0.006741390803631585
+  sse: 0.11738792196550621
+  std: 0.003248250293424495
+  traj: traj2
+- condition: snp_lv4
+  elapsed_s: 174.9
+  max: 0.04352953815365364
+  mean: 0.006138144734154386
+  median: 0.005241535400342284
+  min: 0.00018414297861396505
+  mode: stereo
+  rmse: 0.007231883412987264
+  sse: 0.13509125567662114
+  std: 0.003824044576310938
+  traj: traj2
+- condition: snp_lv5
+  elapsed_s: 174.4
+  max: 0.030830710354787672
+  mean: 0.006081168172412647
+  median: 0.00535968098388335
+  min: 0.0004549857613647827
+  mode: stereo
+  rmse: 0.0069848549871392804
+  sse: 0.12601991851129446
+  std: 0.003436217811809942
+  traj: traj2
+- condition: snp_lv6
+  elapsed_s: 175.1
+  max: 0.054333056931184905
+  mean: 0.006151773983818141
+  median: 0.00530416361378944
+  min: 0.00021634449210988655
+  mode: stereo
+  rmse: 0.007215444983602507
+  sse: 0.13416543954446386
+  std: 0.0037707191838444918
+  traj: traj2
+- condition: snp_lv7
+  elapsed_s: 182.0
+  max: 0.13414297431146185
+  mean: 0.005846170783355615
+  median: 0.004738651991667377
+  min: 0.00043053883224631
+  mode: stereo
+  rmse: 0.008254283115914769
+  sse: 0.1592953976534456
+  std: 0.0058271328223676875
+  traj: traj2
+- condition: snp_lv7a1
+  elapsed_s: 182.1
+  max: 0.04806896789333698
+  mean: 0.0062843837791473085
+  median: 0.005377850368445595
+  min: 0.0002461744369369603
+  mode: stereo
+  rmse: 0.007428588206686044
+  sse: 0.14105010653498026
+  std: 0.003961116415974816
+  traj: traj2
+- condition: snp_lv7a2
+  elapsed_s: 186.1
+  max: 0.28783605463802436
+  mean: 0.010794590728506087
+  median: 0.007583702912541265
+  min: 0.0004588495360297478
+  mode: stereo
+  rmse: 0.020762212219183056
+  sse: 0.9737859016334965
+  std: 0.01773545227047917
+  traj: traj2
+- condition: snp_lv7a3
+  elapsed_s: 187.1
+  max: 0.057958861788623
+  mean: 0.005407362676900672
+  median: 0.004543475246215374
+  min: 0.00011933217752475922
+  mode: stereo
+  rmse: 0.006918635969419209
+  sse: 0.10640950513472967
+  std: 0.004316011186014568
+  traj: traj2
+- condition: snp_lv7a4
+  elapsed_s: 189.0
+  max: 0.06821350934761987
+  mean: 0.0059366312685333565
+  median: 0.004947708406691264
+  min: 0.00020493940057768909
+  mode: stereo
+  rmse: 0.007805851510569731
+  sse: 0.129966500878201
+  std: 0.005068306125969087
+  traj: traj2
+- condition: snp_lv7b
+  elapsed_s: 189.1
+  max: 0.05138575836955856
+  mean: 0.00580711091924535
+  median: 0.004716408345332448
+  min: 0.00016084614969605758
+  mode: stereo
+  rmse: 0.007360522345586803
+  sse: 0.1155601578633497
+  std: 0.004522692999913223
+  traj: traj2
+- condition: snp_lv7c
+  elapsed_s: 214.8
+  mode: stereo
+  status: FAILED
+  traj: traj2
+- condition: snp_lv7d
+  elapsed_s: 0
+  mode: stereo
+  status: FAILED
+  traj: traj2
+- condition: snp_lv7e
+  elapsed_s: 0
+  mode: stereo
+  status: FAILED
+  traj: traj2
+- condition: snp_lv7f
+  elapsed_s: 0
+  mode: stereo
+  status: FAILED
+  traj: traj2
+- condition: snp_lv8
+  elapsed_s: 0
+  mode: stereo
+  status: FAILED
+  traj: traj2
+seed: 42
+slam_modes:
+- stereo

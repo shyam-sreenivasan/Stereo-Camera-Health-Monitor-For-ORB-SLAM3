@@ -1,0 +1,84 @@
+conditions:
+- bright_lv1
+- bright_lv2
+- bright_lv3
+- bright_lv4
+- bright_lv5
+- bright_lv5b
+- bright_lv5c
+- bright_lv5d
+- bright_lv6
+experiment: brightness_sweep
+runs:
+- condition: bright_lv1
+  elapsed_s: 177.7
+  max: 0.06555714136840467
+  mean: 0.005604506619819519
+  median: 0.004792481699271231
+  min: 0.00044816911878330177
+  mode: stereo
+  rmse: 0.006732505345449447
+  sse: 0.11358853033562248
+  std: 0.0037304334567050752
+  traj: traj2
+- condition: bright_lv2
+  elapsed_s: 178.0
+  max: 0.018877850559786354
+  mean: 0.005290972628370389
+  median: 0.0046903505153797626
+  min: 0.0004460844041594748
+  mode: stereo
+  rmse: 0.005900182570903369
+  sse: 0.0880399384017095
+  std: 0.0026110846435585407
+  traj: traj2
+- condition: bright_lv3
+  elapsed_s: 178.0
+  max: 0.022901760017561508
+  mean: 0.005330738107120169
+  median: 0.004659448116108749
+  min: 0.00032905575179308175
+  mode: stereo
+  rmse: 0.006024612137190612
+  sse: 0.09153838943983994
+  std: 0.002806988178970711
+  traj: traj2
+- condition: bright_lv4
+  elapsed_s: 176.5
+  max: 0.03269790228223525
+  mean: 0.005506927778317688
+  median: 0.004873714852773055
+  min: 0.0006036379973200369
+  mode: stereo
+  rmse: 0.0063056460261575395
+  sse: 0.0997607800642557
+  std: 0.0030716312037074676
+  traj: traj2
+- condition: bright_lv5
+  elapsed_s: 184.6
+  mode: stereo
+  status: FAILED
+  traj: traj2
+- condition: bright_lv5b
+  elapsed_s: 0
+  mode: stereo
+  status: FAILED
+  traj: traj2
+- condition: bright_lv5c
+  elapsed_s: 0
+  mode: stereo
+  status: FAILED
+  traj: traj2
+- condition: bright_lv5d
+  elapsed_s: 0
+  mode: stereo
+  status: FAILED
+  traj: traj2
+- condition: bright_lv6
+  elapsed_s: 0
+  mode: stereo
+  status: FAILED
+  traj: traj2
+seed: 42
+slam_modes:
+- stereo

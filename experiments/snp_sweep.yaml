@@ -1,0 +1,101 @@
+# Salt & pepper noise sweep
+# Parameter: density = fraction of pixels corrupted (split evenly salt/pepper)
+#
+# Usage: python run_pipeline.py --config experiments/snp_sweep.yaml
+
+name: snp_sweep
+
+seed: 42
+timeout: 600
+
+sequences:
+  traj1: data/TUM_original/dataset-room1_512_16
+  traj2: data/TUM_original/dataset-room2_512_16
+
+conditions:
+  snp_lv1:
+    type:    salt_and_pepper
+    density: 0.01
+
+  snp_lv2:
+    type:    salt_and_pepper
+    density: 0.03
+
+  snp_lv3:
+    type:    salt_and_pepper
+    density: 0.06
+
+  snp_lv4:
+    type:    salt_and_pepper
+    density: 0.10
+
+  snp_lv5:
+    type:    salt_and_pepper
+    density: 0.15
+
+  snp_lv6:
+    type:    salt_and_pepper
+    density: 0.20
+
+  snp_lv7:
+    type:    salt_and_pepper
+    density: 0.30
+
+  snp_lv7a1:
+    type:    salt_and_pepper
+    density: 0.31
+
+  snp_lv7a2:
+    type:    salt_and_pepper
+    density: 0.32
+
+  snp_lv7a3:
+    type:    salt_and_pepper
+    density: 0.33
+
+  snp_lv7a4:
+    type:    salt_and_pepper
+    density: 0.34
+
+  snp_lv7b:
+    type:    salt_and_pepper
+    density: 0.35
+
+  snp_lv7c:
+    type:    salt_and_pepper
+    density: 0.40
+
+  snp_lv7d:
+    type:    salt_and_pepper
+    density: 0.45
+
+  snp_lv7e:
+    type:    salt_and_pepper
+    density: 0.50
+
+  snp_lv7f:
+    type:    salt_and_pepper
+    density: 0.55
+
+  snp_lv8:
+    type:    salt_and_pepper
+    density: 0.60
+
+  # snp_lv9:
+  #   type:    salt_and_pepper
+  #   density: 0.65
+
+  # snp_lv10:
+  #   type:    salt_and_pepper
+  #   density: 0.70
+
+  # snp_lv11:
+  #   type:    salt_and_pepper
+  #   density: 0.75
+
+  # snp_lv12:
+  #   type:    salt_and_pepper
+  #   density: 0.80
+
+slam_modes:
+  - stereo
